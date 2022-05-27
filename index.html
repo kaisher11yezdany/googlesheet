@@ -1,0 +1,128 @@
+<form method="post" autocomplete="off" name="google-sheet" id="contact-form">
+
+    <div class="row">
+
+
+        <!-- Full name -->
+        <div class="col-12 col-sm-6 col-lg-12">
+            <div class="form-group">
+                <input type="text" id="name" class="form form-control" placeholder="Name*" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name*'" name="Name" data-name="Name" autocomplete="name" required>
+            </div>
+        </div>
+
+  
+   <!-- company name -->
+        <div class="col-12 col-sm-6 col-lg-12">
+            <div class="form-group">
+                <input type="text" id="name" class="form form-control" placeholder="Company Name*" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Company_name*'" name="Company_name" data-name="Company_name" autocomplete="Company_name" required>
+            </div>
+        </div>
+        
+ 
+
+
+
+        <!-- E-mail -->
+        <div class="col-12 col-sm-6 col-lg-12">
+            <div class="form-group">
+                <input type="email" id="email" class="form form-control" placeholder="Email Address*" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address*'" name="Email" data-name="Email" autocomplete="Email" required>
+            </div>
+        </div>
+        
+ <!-- phone name -->
+        <div class="col-12 col-sm-6 col-lg-12">
+            <div class="form-group">
+                <input type="text" id="phone" class="form form-control" placeholder="Phone Number*" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone*'" name="Phone" data-name="Phone" autocomplete="Phone" required>
+            </div>
+        </div>
+        
+  <!-- City  -->
+        <div class="col-12 col-sm-6 col-lg-12">
+            <div class="form-group">
+                <input type="text" id="name" class="form form-control" placeholder="Your City Name*" onfocus="this.placeholder = ''" onblur="this.placeholder = 'City*'" name="City" data-name="City" autocomplete="City" required>
+            </div>
+        </div>
+        
+   <!-- your role -->
+        <div class="col-12 col-sm-6 col-lg-12">
+            <div class="form-group">
+                <input type="text" id="name" class="form form-control" placeholder="Your Role*" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Role*'" name="Role" data-name="Role" autocomplete="Role" required>
+            </div>
+        </div>
+
+
+        <!-- Message -->
+        <div class="col-12">
+            <div class="form-group">
+                <textarea id="text-area" class="form textarea form-control" placeholder="Anything you wanted to say" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Descriptions'" name="Descriptions" data-name="Descriptions" required></textarea>
+            </div>
+            <span class="sub-text">* Required fields</span>
+        </div>
+
+    </div>
+
+    <!-- Form submission -->
+    <button type="submit" id="valid-form" class="btn btn-lg submit"><span>Join Now</span></button>
+
+</form>
+<!-- END - Contact Form -->
+
+</div>
+</div>
+</div>	
+</div>
+</div>
+</section>
+
+</div>
+<!-- +++ END - Contact +++ -->
+
+</div>
+<!-- +++ / Fullpage sections +++ -->
+
+<!-- START - Newsletter Popup -->
+<div id="somedialog_1" class="dialog">
+
+<div class="dialog__overlay"></div>
+
+<div class="dialog__content">
+
+<div class="dialog-inner">
+
+<h3>You like taking the lead of line?</h3>
+
+<p style="font-family:Alatsi !important;">Being the first to know always feels great... Signing up to our newsletter gives you <strong>exclusive access to our Grand Opening!</strong></p>
+
+<!-- Newsletter Form -->
+<div id="subscribe">
+
+<form action="php/notify-me.php" id="notifyMe" method="POST">
+
+<div class="form-group">
+
+<div class="controls">
+
+<!-- Field  -->
+<input type="text" id="mail-sub" name="email" placeholder="Click here to type your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Click here to type your email'" class="form-control email srequiredField" />
+
+<!-- Button -->
+<button class="btn btn-lg submit on-center"><span>Get notified</span></button>
+
+<div class="clear"></div>
+
+</div>
+</div>
+</form>
+
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby42lMlFV5jH7xFaCYl4JMezl-CHXDYJTsdi137coRVIXEl2Axk7vPt2AapvjuikC1I/exec'
+    const form = document.forms['google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => location.replace("https://karlega.com/Thank_you.html"))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
