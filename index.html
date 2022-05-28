@@ -116,13 +116,13 @@
 
 
 <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycby42lMlFV5jH7xFaCYl4JMezl-CHXDYJTsdi137coRVIXEl2Axk7vPt2AapvjuikC1I/exec'
+    const scriptURL = 'google_link_api_script'
     const form = document.forms['google-sheet']
   
     form.addEventListener('submit', e => {
       e.preventDefault()
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => location.replace("https://karlega.com/Thank_you.html"))
+        .then(response => location.replace("https://google.com"))
         .catch(error => console.error('Error!', error.message))
     })
   </script>
